@@ -1,0 +1,10 @@
+variable "access_key_id" {}
+variable "secret_key_id" {}
+variable "region" {}
+variable "net_ip_range" {}
+variable "subnet_ip_range_public" {}
+variable "subnet_ip_range_private" {}
+variable "omi_id" {}
+variable "osc_ip" {}
+variable "keypair_name" {}
+variable "endpoint_api" {}
