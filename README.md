@@ -9,8 +9,6 @@ The goal is to test the behavior of two types of sticky policies for session Per
 
 ## Introduction 
 
-[ref](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html)
-
 By default, an Load Balancer routes each request independently to a registered target based on the chosen load-balancing algorithm. However, you can use the sticky session feature (also known as session affinity) to enable the load balancer to bind a user's session to a specific target. This ensures that all requests from the user during the session are sent to the same target. This feature is useful for servers that maintain state information in order to provide a continuous experience to clients. To use sticky sessions, the client must support cookies.
 
 ### Duration-based stickiness
@@ -31,7 +29,7 @@ In the response to the client, the Load Balancer validates the name with which t
 
 In subsequent requests, clients have to send back both cookies to maintain stickiness. The load balancer decrypts the application cookie, and checks whether the configured duration of stickiness is still valid. It then uses the information in the cookie to send the request to the same target to maintain stickiness. The load balancer also proxies the custom application cookie to the target without inspecting or modifying it. 
 
-If a target fails or becomes unhealthy, the load balancer stops routing requests to that target, and chooses a new healthy target based on the chosen load balancing algorithm. The load balancer treats the session as now being "stuck" to the new healthy target, and continues routing requests to the new healthy target even if the failed target comes back.
+If a target fails or becomes unhealthy, the load balancer stops routing requests to that target, and chooses a new healthy target based on the chosen load balancing algorithm. The load balancer treats the session as now being "stuck" to the new healthy target, and continues routing requests to the new healthy target even if the failed target comes back [ref](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html).
 
 ## Architecture
 
