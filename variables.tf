@@ -7,13 +7,13 @@ variable "access_key_id" {
   description = "The access_key that belongs to the IAM user"
   type        = string
   sensitive   = true
-  default     = "AXTPYYLX2NHNO0OKVRWK"
+  default     = ""
 }
 variable "secret_key_id" {
   description = "The secret_key that belongs to the IAM user"
   type        = string
   sensitive   = true
-  default     = "IUBPAV3B7R5ZUJ0B1UPUX2FVVUP4CC1JGWKCZOWZ"
+  default     = ""
 }
 variable "net_ip_range" {
   description = "The cidr of the vpc"
